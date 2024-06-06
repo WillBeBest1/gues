@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة الرقم العشوائي</title>
+</head>
+<body>
+<h1>لعبة الرقم العشوائي</h1>
+<p>أدخل رقمًا بين 0 و 9:</p>
+<input type="number" id="userInput" min="0" max="9">
+<button onclick="checkNumber()">تحقق</button>
+<div id="results"></div>
+
+<script>
+  const randomNumber = Math.floor(Math.random() * 10);
+  console.log("الرقم العشوائي هو: " + randomNumber);
+
+  function checkNumber() {
+    const input = document.getElementById("userInput").value;
+    const results = document.getElementById("results");
+
+    if (input == randomNumber) {
+      window.location.href = "welcome.html";
+    } else {
+      const newResult = document.createElement("p");
+      newResult.textContent = "NO";
+      results.appendChild(newResult);
+    }
+  }
+</script>
+</body>
+</html>
